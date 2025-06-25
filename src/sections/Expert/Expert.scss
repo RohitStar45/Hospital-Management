@@ -1,0 +1,147 @@
+@use './../../sass/colors' as *;
+
+.expert-section {
+    padding: 100px 0;
+
+    .section-title {
+        margin-bottom: 40px;
+
+        h2 {
+            max-width: inherit;
+        }
+    }
+
+    .expert-text {
+        ul {
+            padding: 0;
+            margin: 0;
+
+            li {
+                list-style: none;
+                margin-bottom: 15px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.6;
+
+                svg {
+                    color: $color-blue;
+                    margin-right: 15px;
+                    top: -1px;
+                    position: relative;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .expert-img {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 45%;
+            height: 125%;
+            top: -12%;
+            right: 0%;
+            background: #FADBE2;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        img {
+            border-radius: 15px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 15px 35px rgba(28, 102, 255, 0.1);
+        }
+    }
+}
+
+// Mobile Responsive
+@media (max-width: 575px) {
+    .expert-section {
+        padding: 50px 0;
+
+        .expert-text {
+            margin-bottom: 30px;
+            
+            ul {
+                margin-bottom: 20px;
+                
+                li {
+                    margin-bottom: 12px;
+                    font-size: 14px;
+
+                    svg {
+                        margin-right: 10px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .expert-img {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .expert-section {
+        padding: 60px 0;
+
+        .expert-text {
+            margin-bottom: 30px;
+        }
+
+        .expert-img {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+// Medium Devices Responsive
+@media (min-width: 768px) and (max-width: 991px) {
+    .expert-section {
+        padding: 70px 0;
+
+        .expert-img {
+            &::before {
+                right: -5%;
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .expert-section {
+        padding: 80px 0;
+
+        .expert-img {
+            &::before {
+                right: -5%;
+                width: 50%;
+            }
+        }
+    }
+}
+
+// Large Device Responsive
+@media (min-width: 1200px) {
+    .expert-section {
+        .expert-img {
+            &::before {
+                right: -5%;
+                width: 50%;
+            }
+        }
+    }
+}
