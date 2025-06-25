@@ -45,21 +45,47 @@ const ServicesBanner = () => {
                     description="We offer a complete range of healthcare services designed to meet all your respiratory and chest health needs under one roof."
                 />
 
-                <div className="services-grid">
+                <div className="services-list">
                     {services.map((service, index) => (
                         <div 
                             key={service.title} 
-                            className="service-item"
+                            className={`service-item ${index % 2 === 0 ? 'image-right' : 'image-left'}`}
                             data-aos="fade-up" 
                             data-aos-duration="1000"
                             data-aos-delay={index * 100}
                         >
-                            <div className="service-image">
-                                <img src={service.image} alt={service.title} />
-                            </div>
-                            <div className="service-content">
-                                <h3>{service.title}</h3>
-                                <p>{service.description}</p>
+                            <div className="row align-items-center">
+                                {index % 2 === 0 ? (
+                                    // Content left, image right
+                                    <>
+                                        <div className="col-lg-7 col-md-6">
+                                            <div className="service-content">
+                                                <h3>{service.title}</h3>
+                                                <p>{service.description}</p>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-5 col-md-6">
+                                            <div className="service-image">
+                                                <img src={service.image} alt={service.title} />
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    // Image left, content right
+                                    <>
+                                        <div className="col-lg-5 col-md-6">
+                                            <div className="service-image">
+                                                <img src={service.image} alt={service.title} />
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-7 col-md-6">
+                                            <div className="service-content">
+                                                <h3>{service.title}</h3>
+                                                <p>{service.description}</p>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     ))}
