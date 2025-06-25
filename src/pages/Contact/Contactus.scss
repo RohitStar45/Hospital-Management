@@ -32,9 +32,9 @@
         
         h3 {
             color: $color-black;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             background: linear-gradient(135deg, $color-blue 0%, $color-green 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -43,8 +43,8 @@
         
         p {
             color: $color-gray;
-            font-size: 18px;
-            margin-bottom: 40px;
+            font-size: 20px;
+            margin-bottom: 50px;
             line-height: 1.6;
         }
     }
@@ -127,11 +127,12 @@
             margin-bottom: 40px;
             
             h3 {
-                font-size: 24px;
+                font-size: 28px;
             }
             
             p {
-                font-size: 16px;
+                font-size: 18px;
+                margin-bottom: 30px;
             }
         }
         
@@ -170,6 +171,10 @@
         .contact-form-content {
             padding-right: 20px;
             margin-bottom: 40px;
+
+            h3 {
+                font-size: 32px;
+            }
         }
         
         .contact-image-section {
@@ -184,6 +189,10 @@
     .contact-form-section {
         .contact-form-content {
             padding-right: 20px;
+
+            h3 {
+                font-size: 34px;
+            }
         }
         
         .contact-image-section {

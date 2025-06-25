@@ -13,6 +13,7 @@
     padding: 70px 30px 30px;
     position: relative;
     height: 100%;
+    min-height: 350px; // Ensure consistent height
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,6 +49,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 20px 0;
         
         h3 {
             font-size: 20px;
@@ -92,6 +94,7 @@
     .testimonial-card {
         padding: 50px 20px 20px;
         border-radius: 20px;
+        min-height: 300px;
 
         .testimonial-img {
             top: -30px;
@@ -104,6 +107,8 @@
         }
 
         .testimonial-text {
+            padding: 15px 0;
+
             h3 {
                 font-size: 18px;
                 margin-bottom: 10px;
@@ -126,6 +131,7 @@
 @media (min-width: 576px) and (max-width: 767px) {
     .testimonial-card {
         padding: 60px 25px 25px;
+        min-height: 320px;
 
         .testimonial-img {
             top: -40px;
@@ -135,5 +141,18 @@
                 height: 90px;
             }
         }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .testimonial-card {
+        min-height: 340px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-card {
+        min-height: 380px;
+        padding: 80px 35px 35px;
     }
 }
