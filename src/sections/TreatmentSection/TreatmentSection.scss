@@ -1,0 +1,293 @@
+@use '../../sass/colors' as *;
+
+.treatment-section {
+    background: linear-gradient(135deg, $color-light-blue 0%, $color-light-green 100%);
+    margin-top: 120px;
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        
+        h2 {
+            background: linear-gradient(135deg, $color-blue 0%, $color-green 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    .treatments-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .treatment-card {
+        background: $color-white;
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 40px;
+        box-shadow: 0 15px 35px rgba(28, 102, 255, 0.1);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        scroll-margin-top: 140px;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(135deg, $color-blue 0%, $color-green 100%);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(28, 102, 255, 0.2);
+            border-color: $color-blue;
+
+            &:before {
+                transform: scaleY(1);
+            }
+
+            .treatment-image img {
+                transform: scale(1.05);
+            }
+
+            .treatment-number {
+                background: linear-gradient(135deg, $color-blue 0%, $color-green 100%);
+                color: $color-white;
+            }
+        }
+
+        .treatment-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 280px;
+            margin-bottom: 20px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .treatment-number {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background: $color-white;
+                color: $color-blue;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                font-weight: 700;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+        }
+
+        .treatment-content {
+            .treatment-header {
+                margin-bottom: 30px;
+
+                h3 {
+                    color: $color-blue;
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                        width: 50px;
+                        height: 3px;
+                        background: linear-gradient(135deg, $color-blue 0%, $color-green 100%);
+                        border-radius: 2px;
+                    }
+                }
+
+                .treatment-description {
+                    font-size: 16px;
+                    color: $color-gray;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+            }
+
+            .treatment-details {
+                .symptoms-section,
+                .treatment-approach {
+                    h4 {
+                        color: $color-black;
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                        display: flex;
+                        align-items: center;
+
+                        &:before {
+                            content: "";
+                            width: 4px;
+                            height: 20px;
+                            background: linear-gradient(135deg, $color-blue 0%, $color-green 100%);
+                            margin-right: 10px;
+                            border-radius: 2px;
+                        }
+                    }
+
+                    .symptoms-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+
+                        li {
+                            padding: 8px 0;
+                            padding-left: 25px;
+                            position: relative;
+                            color: $color-gray;
+                            font-size: 14px;
+                            border-bottom: 1px solid rgba(28, 102, 255, 0.1);
+
+                            &:before {
+                                content: "✓";
+                                position: absolute;
+                                left: 0;
+                                color: $color-green;
+                                font-weight: bold;
+                                font-size: 16px;
+                            }
+
+                            &.more-symptoms {
+                                color: $color-blue;
+                                font-weight: 600;
+                                font-style: italic;
+
+                                &:before {
+                                    content: "•";
+                                    color: $color-blue;
+                                }
+                            }
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+
+                    p {
+                        color: $color-gray;
+                        font-size: 14px;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mobile Responsive
+@media (max-width: 575px) {
+    .treatment-section {
+        margin-top: 100px;
+        
+        .treatment-card {
+            padding: 25px;
+            margin-bottom: 30px;
+
+            .treatment-image {
+                height: 200px;
+                margin-bottom: 25px;
+
+                .treatment-number {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 16px;
+                    top: 15px;
+                    right: 15px;
+                }
+            }
+
+            .treatment-content {
+                .treatment-header {
+                    margin-bottom: 25px;
+
+                    h3 {
+                        font-size: 22px;
+                    }
+
+                    .treatment-description {
+                        font-size: 14px;
+                    }
+                }
+
+                .treatment-details {
+                    .symptoms-section,
+                    .treatment-approach {
+                        margin-bottom: 20px;
+
+                        h4 {
+                            font-size: 16px;
+                        }
+
+                        .symptoms-list li {
+                            font-size: 13px;
+                            padding: 6px 0;
+                            padding-left: 20px;
+                        }
+
+                        p {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .treatment-section {
+        margin-top: 110px;
+        
+        .treatment-card {
+            padding: 30px;
+
+            .treatment-image {
+                height: 220px;
+            }
+
+            .treatment-content {
+                .treatment-header h3 {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .treatment-section {
+        .treatment-card {
+            padding: 35px;
+
+            .treatment-image {
+                height: 250px;
+            }
+        }
+    }
+}
