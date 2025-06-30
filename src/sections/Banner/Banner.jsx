@@ -44,21 +44,6 @@ const Banner = () => {
                                     Your journey to better breathing starts here.
                                 </p>
 
-                                <div className="banner-stats">
-                                    <div className="stat-item">
-                                        <h3>19+</h3>
-                                        <p>Years Experience</p>
-                                    </div>
-                                    <div className="stat-item">
-                                        <h3>10K+</h3>
-                                        <p>Patients Treated</p>
-                                    </div>
-                                    <div className="stat-item">
-                                        <h3>10+</h3>
-                                        <p>Hospital Affiliations</p>
-                                    </div>
-                                </div>
-
                                 <div className="banner-actions">
                                     <div className="theme-btn">
                                         <button onClick={handleBookAppointment}>
