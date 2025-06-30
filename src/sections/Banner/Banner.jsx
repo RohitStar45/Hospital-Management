@@ -2,16 +2,7 @@ import React from 'react';
 import './Banner.scss';
 import {useNavigate} from 'react-router-dom';
 import icon from '../../assets/banner/icons/Calling.png';
-import bannerImg from '../../assets/banner/1.jpg';
-import bannerImg1 from '../../assets/banner/2.jpg';
-import bannerImg2 from '../../assets/banner/3.jpg';
-import bannerImg3 from '../../assets/banner/4.jpg';
-
-import bannerPattern from '../../assets/banner/pattern_02.png';
-//import shapeOne from '../../assets/download.svg';
-import shapeTwo from '../../assets/banner/vector_02.png';
-import shapeThree from '../../assets/banner/vector_03.png';
-import shapeFour from '../../assets/banner/pattern.png';
+import bannerBg from '../../assets/banner/2.jpg';
 
 const Banner = () => {
     const navigate = useNavigate();
@@ -35,71 +26,79 @@ const Banner = () => {
     };
 
     return (
-        <section className='section-bg section-common banner-section' style={{ backgroundImage: `url(${bannerImg2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <div className="d-table">
-                <div className="d-table-cell">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-6">
-                                <div className="banner-text" data-aos="fade-up" data-aos-duration="2000">
-                                    <h1>Your most trusted health partner</h1>
+        <section className='banner-section' style={{ backgroundImage: `url(${bannerBg})` }}>
+            <div className="banner-overlay"></div>
+            <div className="banner-content">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-10 col-xl-8">
+                            <div className="banner-text" data-aos="fade-up" data-aos-duration="2000">
+                                <div className="banner-badge">
+                                    <span>🫁 Expert Respiratory Care</span>
+                                </div>
+                                
+                                <h1>Your most trusted health partner</h1>
+                                
+                                <p className="banner-subtitle">
+                                    Providing comprehensive chest and respiratory care with 19+ years of expertise. 
+                                    Your journey to better breathing starts here.
+                                </p>
 
-                                    <div className="banner-bottom">
-                                        <div className="theme-btn">
-                                            <button onClick={handleBookAppointment}>
-                                                <span>
-                                                    Book an appointment
-                                                </span>
-                                            </button>
-                                        </div>
+                                <div className="banner-stats">
+                                    <div className="stat-item">
+                                        <h3>19+</h3>
+                                        <p>Years Experience</p>
+                                    </div>
+                                    <div className="stat-item">
+                                        <h3>10K+</h3>
+                                        <p>Patients Treated</p>
+                                    </div>
+                                    <div className="stat-item">
+                                        <h3>10+</h3>
+                                        <p>Hospital Affiliations</p>
+                                    </div>
+                                </div>
 
-                                        <div className="banner-call">
-                                            <div className='icon' onClick={handlePhoneClick}>
-                                                <img src={icon} alt="icon" />
-                                            </div>
-                                            <div className='call-text'>
-                                                <p>Support Available </p>
-                                                <h6 onClick={handlePhoneClick}>+91-9158450788</h6>
-                                                <h6 onClick={() => window.open('tel:+918766040262', '_self')}>+91-8766040262</h6>
-                                            </div>
+                                <div className="banner-actions">
+                                    <div className="theme-btn">
+                                        <button onClick={handleBookAppointment}>
+                                            <span>
+                                                Book an appointment
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                    <div className="banner-call">
+                                        <div className='icon' onClick={handlePhoneClick}>
+                                            <img src={icon} alt="icon" />
                                         </div>
+                                        <div className='call-text'>
+                                            <p>24/7 Support Available</p>
+                                            <h6 onClick={handlePhoneClick}>+91-9158450788</h6>
+                                            <h6 onClick={() => window.open('tel:+918766040262', '_self')}>+91-8766040262</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="banner-features">
+                                    <div className="feature-item">
+                                        <span className="feature-icon">🏥</span>
+                                        <span>Modern Clinic</span>
+                                    </div>
+                                    <div className="feature-item">
+                                        <span className="feature-icon">⚡</span>
+                                        <span>Quick Diagnosis</span>
+                                    </div>
+                                    <div className="feature-item">
+                                        <span className="feature-icon">💝</span>
+                                        <span>Compassionate Care</span>
                                     </div>
                                 </div>
                             </div>
-
-                            {/* <div className="col-lg-6">
-                                <div className="banner-img-area" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
-                                    <div className="banner-img">
-                                        <img src={bannerImg} alt="banner model" />
-                                    </div>
-                                    
-                                    
-                                    <div className="shapes">
-                                        <div className="shpaess">
-                                        </div>
-                                        <img src={shapeTwo} alt="shape" />
-                                        <img src={shapeThree} alt="shape" />
-                                        <div className="tree-pattern-container">
-                                            <img src={shapeFour} alt="tree pattern" className="tree-pattern" />
-                                        </div>
-                                    </div>
-
-                        
-                                    <div className="tree-tagline-wrapper">
-                                        <div className="tree-tagline">
-                                            <span className="tagline-text">More Oxygen</span>
-                                            <span className="tagline-text">More Life</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* Banner Pattern Vector*/}
-            <img className='banner-pattern' src={bannerPattern} alt="banner pattern" />
         </section>
     );
 };
