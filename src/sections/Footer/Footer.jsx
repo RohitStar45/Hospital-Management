@@ -11,6 +11,10 @@ const Footer = () => {
 
     const footerMenu = [
         {
+            'name': 'Home',
+            'link': '/'
+        },
+        {
             'name': 'About Us',
             'link': '/about'
         },
@@ -22,32 +26,37 @@ const Footer = () => {
             'name': 'Treatments',
             'link': '/treatments'
         },
+        
         {
-            'name': 'FAQs',
-            'link': '/about#faq'
+            'name': 'Contact Us',
+            'link': '/contact'
         },
-        {
-            'name': 'Terms of Use',
-            'link': '/'
-        },
-        {
-            'name': 'Privacy Policy',
-            'link': '/'
-        }
     ];
 
     const footerContacts = [
         {
-        title: 'Phone Number',
-        info: ['+91-9158450788', ' +91-8766040262'],
-        icon: call
+            title: 'Phone Number',
+            info: ['+91-9158450788', ' +91-8766040262'],
+            icon: call,
+            isPhone: true
         },
         {
             'title': 'Clinic Address',
             'info': 'Office Number. 017, First floor, "A" Building Kolte Patil Downtown City Vista, Pune',
-            'icon': location
+            'icon': location,
+            isLocation: true
         }
     ];
+
+    const handlePhoneClick = (phoneNumber) => {
+        window.open(`tel:${phoneNumber}`, '_self');
+    };
+
+    const handleLocationClick = () => {
+    const mapsUrl = "https://maps.app.goo.gl/9XqnYqnRR4z7FJiu7";
+    window.open(mapsUrl, '_blank');
+    };
+
 
     return (
         <footer className='pt-100'>
@@ -62,9 +71,8 @@ const Footer = () => {
                         <div className="social-logo">
                             <p>Follow us on</p>
                             <ul>
-                                <li><a href="/"><FaFacebookF /></a></li>
-                                <li><a href="/"><FaTwitter /></a></li>
-                                <li><a href="/"><FaInstagram /></a></li>
+                                <li><a href="https://www.facebook.com/share/1G3KdvntpC/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
+                                <li><a href="https://www.instagram.com/dr.pandharkar_chest_clinic?igsh=cG9lcjZ3eWV1eDFr" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -90,19 +98,46 @@ const Footer = () => {
                                 footerContacts.map((footerContact, index) => {
                                     return (
                                     <div className="contact-list" key={footerContact.title || index}>
-                                        <div className="contact-icon">
-                                        <img src={footerContact.icon} alt="icon" />
+                                        <div 
+                                            className="contact-icon"
+                                            onClick={() => {
+                                                if (footerContact.isPhone && Array.isArray(footerContact.info)) {
+                                                    handlePhoneClick(footerContact.info[0]);
+                                                } else if (footerContact.isLocation) {
+                                                    handleLocationClick();
+                                                }
+                                            }}
+                                            style={{
+                                                cursor: footerContact.isPhone || footerContact.isLocation ? 'pointer' : 'default'
+                                            }}
+                                        >
+                                            <img src={footerContact.icon} alt="icon" />
                                         </div>
                                         <div className="contact-text">
-                                        <p>{footerContact.title}</p>
+                                            <p>{footerContact.title}</p>
 
-                                        {Array.isArray(footerContact.info) ? (
-                                            footerContact.info.map((line, i) => (
-                                            <h5 key={i}>{line}</h5>
-                                            ))
-                                        ) : (
-                                            <h5>{footerContact.info}</h5>
-                                        )}
+                                            {Array.isArray(footerContact.info) ? (
+                                                footerContact.info.map((line, i) => (
+                                                    <h5 
+                                                        key={i}
+                                                        onClick={() => footerContact.isPhone && handlePhoneClick(line)}
+                                                        style={{
+                                                            cursor: footerContact.isPhone ? 'pointer' : 'default'
+                                                        }}
+                                                    >
+                                                        {line}
+                                                    </h5>
+                                                ))
+                                            ) : (
+                                                <h5 
+                                                    onClick={() => footerContact.isLocation && handleLocationClick()}
+                                                    style={{
+                                                        cursor: footerContact.isLocation ? 'pointer' : 'default'
+                                                    }}
+                                                >
+                                                    {footerContact.info}
+                                                </h5>
+                                            )}
                                         </div>
                                     </div>
                                     );

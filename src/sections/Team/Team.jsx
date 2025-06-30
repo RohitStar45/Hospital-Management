@@ -56,21 +56,21 @@ const Team = () => {
                                         
                                         <div className="experience-highlight">
                                             <div className="experience-item">
-                                                <h4>12+</h4>
+                                                <h4>19+</h4>
                                                 <p>Years Experience</p>
                                             </div>
                                             <div className="experience-item">
-                                                <h4>1000+</h4>
+                                                <h4>10K+</h4>
                                                 <p>Patients Treated</p>
                                             </div>
                                             <div className="experience-item">
-                                                <h4>6+</h4>
+                                                <h4>10+</h4>
                                                 <p>Hospital Affiliations</p>
                                             </div>
                                         </div>
                                         
                                         <div className="doctor-description">
-                                            <p>Dr. Vaibhav Pandharkar is a highly experienced Pulmonologist practicing in Kharadi-Chandannagar, Pune. With 12 years of specialized experience in respiratory medicine, he serves as a consultant at multiple prestigious hospitals including Columbia Asia Hospital, Sangamnerkar Hospital, Imax Hospital, and maintains panel consultancy at Ruby Hall Clinic, Inamdar Hospital, and Sahyadri Hospital.</p>
+                                            <p>Dr. Vaibhav Pandharkar is a highly experienced Pulmonologist practicing in Kharadi-Chandannagar, Pune. With 19 years of specialized experience in respiratory medicine, he serves as a consultant at multiple prestigious hospitals including Manipal Hospital, Sangamnerkar Hospital, Imax Hospital, and maintains panel consultancy at Ruby Hall Clinic, Inamdar Hospital, and Sahyadri Hospital.</p>
                                             
                                             <div className="qualifications">
                                                 <h4>Qualifications & Certifications</h4>

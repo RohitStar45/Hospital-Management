@@ -2,7 +2,7 @@
 
 .team-section {
     background: linear-gradient(135deg, $color-light-blue 0%, $color-light-green 100%);
-    
+    margin-top: 50px;
     .team-intro {
         margin-bottom: 60px;
         
@@ -236,6 +236,8 @@
 // Mobile Responsive
 @media (max-width: 575px) {
     .team-section {
+        margin-top: 80px;
+
         .team-intro {
             margin-bottom: 40px;
             
