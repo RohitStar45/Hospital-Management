@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
-import Appointment from '../sections/Appointment/Appointment';
 import Banner from '../sections/Banner/Banner';
 import Expert from '../sections/Expert/Expert';
 import Features from '../sections/Features/Features';

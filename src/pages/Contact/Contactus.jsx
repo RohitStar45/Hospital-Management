@@ -9,14 +9,18 @@ import contactImage from '../../assets/contactusimg.jpg';
 
 const Contactus = () => {
     const clinicHours = [
-        { day: 'Monday', time: '6:00 PM - 9:30 PM' },
-        { day: 'Tuesday', time: '10:00 AM - 12:00 PM & 7:00 PM - 9:30 PM' },
-        { day: 'Wednesday', time: '6:00 PM - 9:30 PM' },
-        { day: 'Thursday', time: '6:00 PM - 9:30 PM' },
-        { day: 'Friday', time: '10:00 AM - 12:00 PM & 7:00 PM - 9:30 PM' },
-        { day: 'Saturday', time: '10:00 AM - 12:00 PM & 6:00 PM - 9:30 PM' },
+        { day: 'Monday', time: '6:00 PM - 9:00 PM' },
+        { day: 'Tuesday', time: '10:00 AM - 11:30 AM & 7:00 PM - 9:00 PM' },
+        { day: 'Wednesday', time: '6:00 PM - 9:00 PM' },
+        { day: 'Thursday', time: '6:00 PM - 9:00 PM' },
+        { day: 'Friday', time: '10:00 AM - 11:30 AM & 7:00 PM - 9:00 PM' },
+        { day: 'Saturday', time: '10:00 AM - 11:30 AM & 6:00 PM - 9:00 PM' },
         { day: 'Sunday', time: 'Closed', closed: true }
     ];
+
+    const handlePhoneClick = (phoneNumber) => {
+        window.open(`tel:${phoneNumber}`, '_self');
+    };
 
     return (
         <>
@@ -65,7 +69,22 @@ const Contactus = () => {
                                 </div>
                                 <div className="note-text">
                                     <h5>Need Emergency Care?</h5>
-                                    <p>For urgent respiratory issues, please call us at <strong>+91-9158450788</strong></p>
+                                    <p>For urgent respiratory issues, please call us at:</p>
+                                    <div className="emergency-phones">
+                                        <strong 
+                                            onClick={() => handlePhoneClick('+919158450788')}
+                                            className="phone-link"
+                                        >
+                                            +91-9158450788
+                                        </strong>
+                                        <span> or </span>
+                                        <strong 
+                                            onClick={() => handlePhoneClick('+918766040262')}
+                                            className="phone-link"
+                                        >
+                                            +91-8766040262
+                                        </strong>
+                                    </div>
                                 </div>
                             </div>
                         </div>
