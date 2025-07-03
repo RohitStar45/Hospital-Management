@@ -30,8 +30,8 @@ const Banner = () => {
             <div className="banner-overlay"></div>
             <div className="banner-content">
                 <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-10 col-xl-8">
+                    <div className="row">
+                        <div className="col-lg-6 col-md-8">
                             <div className="banner-text" data-aos="fade-up" data-aos-duration="2000">
                                 <div className="banner-badge">
                                     <span>🫁 Expert Respiratory Care</span>
@@ -43,6 +43,21 @@ const Banner = () => {
                                     Providing comprehensive chest and respiratory care with 19+ years of expertise. 
                                     Your journey to better breathing starts here.
                                 </p>
+
+                                <div className="banner-stats">
+                                    <div className="stat-item">
+                                        <h3>19+</h3>
+                                        <p>Years Experience</p>
+                                    </div>
+                                    <div className="stat-item">
+                                        <h3>10K+</h3>
+                                        <p>Happy Patients</p>
+                                    </div>
+                                    <div className="stat-item">
+                                        <h3>10+</h3>
+                                        <p>Hospital Affiliations</p>
+                                    </div>
+                                </div>
 
                                 <div className="banner-actions">
                                     <div className="theme-btn">
@@ -79,6 +94,12 @@ const Banner = () => {
                                         <span>Compassionate Care</span>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        
+                        <div className="col-lg-6 col-md-4">
+                            <div className="banner-image-space">
+                                {/* This space allows the background image to be more visible */}
                             </div>
                         </div>
                     </div>
