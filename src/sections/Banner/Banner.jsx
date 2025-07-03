@@ -30,76 +30,54 @@ const Banner = () => {
             <div className="banner-overlay"></div>
             <div className="banner-content">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-lg-6 col-md-8">
+                    <div className="row align-items-center min-vh-100">
+                        <div className="col-lg-7 col-md-8">
                             <div className="banner-text" data-aos="fade-up" data-aos-duration="2000">
-                                <div className="banner-badge">
-                                    <span>🫁 Expert Respiratory Care</span>
-                                </div>
-                                
-                                <h1>Your most trusted health partner</h1>
-                                
-                                <p className="banner-subtitle">
-                                    Providing comprehensive chest and respiratory care with 19+ years of expertise. 
-                                    Your journey to better breathing starts here.
-                                </p>
-
-                                <div className="banner-stats">
-                                    <div className="stat-item">
-                                        <h3>19+</h3>
-                                        <p>Years Experience</p>
-                                    </div>
-                                    <div className="stat-item">
-                                        <h3>10K+</h3>
-                                        <p>Happy Patients</p>
-                                    </div>
-                                    <div className="stat-item">
-                                        <h3>10+</h3>
-                                        <p>Hospital Affiliations</p>
-                                    </div>
+                                <div className="banner-intro">
+                                    <span className="welcome-text">Welcome to</span>
+                                    <h1>Dr. Pandharkar<br />Chest Clinic</h1>
+                                    <p className="banner-tagline">
+                                        Your trusted partner for comprehensive respiratory care and chest health solutions
+                                    </p>
                                 </div>
 
-                                <div className="banner-actions">
-                                    <div className="theme-btn">
-                                        <button onClick={handleBookAppointment}>
-                                            <span>
-                                                Book an appointment
-                                            </span>
-                                        </button>
-                                    </div>
+                                <div className="banner-cta">
+                                    <button 
+                                        className="primary-btn"
+                                        onClick={handleBookAppointment}
+                                    >
+                                        <span>Book Appointment</span>
+                                        <div className="btn-arrow">→</div>
+                                    </button>
 
-                                    <div className="banner-call">
-                                        <div className='icon' onClick={handlePhoneClick}>
-                                            <img src={icon} alt="icon" />
+                                    <div className="emergency-contact">
+                                        <div className="contact-icon" onClick={handlePhoneClick}>
+                                            <img src={icon} alt="Call" />
                                         </div>
-                                        <div className='call-text'>
-                                            <p>24/7 Support Available</p>
-                                            <h6 onClick={handlePhoneClick}>+91-9158450788</h6>
-                                            <h6 onClick={() => window.open('tel:+918766040262', '_self')}>+91-8766040262</h6>
+                                        <div className="contact-info">
+                                            <span className="contact-label">Emergency Call</span>
+                                            <div className="contact-numbers">
+                                                <a href="tel:+919158450788">+91-9158450788</a>
+                                                <a href="tel:+918766040262">+91-8766040262</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="banner-features">
-                                    <div className="feature-item">
-                                        <span className="feature-icon">🏥</span>
-                                        <span>Modern Clinic</span>
+                                <div className="banner-highlights">
+                                    <div className="highlight-item">
+                                        <span className="highlight-icon">🏥</span>
+                                        <span>Expert Care</span>
                                     </div>
-                                    <div className="feature-item">
-                                        <span className="feature-icon">⚡</span>
+                                    <div className="highlight-item">
+                                        <span className="highlight-icon">⚡</span>
                                         <span>Quick Diagnosis</span>
                                     </div>
-                                    <div className="feature-item">
-                                        <span className="feature-icon">💝</span>
-                                        <span>Compassionate Care</span>
+                                    <div className="highlight-item">
+                                        <span className="highlight-icon">💝</span>
+                                        <span>Compassionate Treatment</span>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div className="col-lg-6 col-md-4">
-                            <div className="banner-image-space">
-                                {/* This space allows the background image to be more visible */}
                             </div>
                         </div>
                     </div>
