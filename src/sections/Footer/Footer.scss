@@ -197,7 +197,7 @@ footer {
 @media (max-width: 575px) {
     footer {
         .footer-logo {
-            text-align: center;
+            text-align: left;
             margin-bottom: 25px;
 
             img {
@@ -206,7 +206,7 @@ footer {
         }
 
         .social-logo {
-            text-align: center;
+            text-align: left;
             margin-bottom: 30px;
 
             p {
@@ -214,7 +214,6 @@ footer {
             }
 
             ul {
-                justify-content: center;
                 display: flex;
                 gap: 15px;
 
@@ -226,7 +225,7 @@ footer {
         }
 
         .footer-link {
-            text-align: center;
+            text-align: left;
             margin-top: 30px;
             margin-bottom: 30px;
 
@@ -237,7 +236,6 @@ footer {
             ul {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
                 gap: 15px;
 
                 li {
@@ -260,7 +258,7 @@ footer {
         }
 
         .footer-contact {
-            text-align: center;
+            text-align: left;
 
             p {
                 margin-bottom: 15px;
@@ -268,17 +266,18 @@ footer {
         }
 
         .contact-list {
-            flex-direction: column;
-            text-align: center;
+            flex-direction: row;
+            text-align: left;
             margin-bottom: 25px;
             margin-top: 20px;
+            align-items: flex-start;
 
             .contact-icon {
                 width: 45px;
                 height: 45px;
                 line-height: 45px;
                 border-radius: 10px;
-                margin-bottom: 15px;
+                flex-shrink: 0;
 
                 &::before {
                     width: 60px;
@@ -290,8 +289,8 @@ footer {
             }
 
             .contact-text {
-                margin-left: 0;
-                width: 100%;
+                margin-left: 15px;
+                width: calc(100% - 60px);
 
                 h5 {
                     font-size: 14px;
@@ -305,6 +304,8 @@ footer {
             padding: 25px 15px;
 
             .copy-text {
+                text-align: center; // Keep copyright centered
+
                 p {
                     font-size: 12px;
                     line-height: 1.8;
