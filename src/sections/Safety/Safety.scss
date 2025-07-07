@@ -31,12 +31,23 @@
         position: relative;
         z-index: 2;
 
+        .row {
+            margin-bottom: 0; // Remove the row margin
+        }
+
+        // Add proper spacing between rows using nth-child
+        .col-lg-4:nth-child(4),
+        .col-lg-4:nth-child(5),
+        .col-lg-4:nth-child(6) {
+            margin-top: 40px; // Add space for second row
+        }
+
         .safety-feature-card {
             background: $color-white;
             padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 30px; // Keep individual card margin
             box-shadow: 0 15px 35px rgba(28, 102, 255, 0.1);
             transition: all 0.3s ease;
             border: 2px solid transparent;
@@ -192,9 +203,19 @@
         .safety-features {
             margin-bottom: 50px;
 
+            // Reset nth-child spacing for mobile (single column)
+            .col-lg-4:nth-child(1),
+            .col-lg-4:nth-child(2),
+            .col-lg-4:nth-child(3),
+            .col-lg-4:nth-child(4),
+            .col-lg-4:nth-child(5),
+            .col-lg-4:nth-child(6) {
+                margin-top: 20px;
+            }
+
             .safety-feature-card {
                 padding: 30px 25px;
-                margin-bottom: 25px; // Increased spacing between cards
+                margin-bottom: 30px;
 
                 .feature-icon {
                     width: 60px;
@@ -250,8 +271,20 @@
 @media (min-width: 576px) and (max-width: 767px) {
     .safety-section {
         .safety-features {
-            .safety-feature-card {
-                margin-bottom: 30px; // Proper spacing for tablet view
+            // Reset nth-child spacing for tablet (2 columns)
+            .col-lg-4:nth-child(4),
+            .col-lg-4:nth-child(5),
+            .col-lg-4:nth-child(6) {
+                margin-top: 0;
+            }
+
+            // Add spacing for 2-column layout (every 3rd item starts new row)
+            .col-lg-4:nth-child(3n+1) {
+                clear: left;
+            }
+
+            .col-lg-4:nth-child(n+3) {
+                margin-top: 40px;
             }
         }
 
@@ -272,8 +305,11 @@
 @media (min-width: 768px) and (max-width: 991px) {
     .safety-section {
         .safety-features {
-            .safety-feature-card {
-                margin-bottom: 35px; // Consistent spacing for medium screens
+            // For medium screens, keep the 3-column layout spacing
+            .col-lg-4:nth-child(4),
+            .col-lg-4:nth-child(5),
+            .col-lg-4:nth-child(6) {
+                margin-top: 40px;
             }
         }
 
@@ -290,8 +326,11 @@
 @media (min-width: 992px) {
     .safety-section {
         .safety-features {
-            .safety-feature-card {
-                margin-bottom: 30px; // Standard spacing for large screens
+            // For large screens, maintain the 3-column layout spacing
+            .col-lg-4:nth-child(4),
+            .col-lg-4:nth-child(5),
+            .col-lg-4:nth-child(6) {
+                margin-top: 40px;
             }
         }
     }
